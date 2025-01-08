@@ -10,7 +10,7 @@ const Navbar = () => {
         setMenuOpen(!menuOpen)
     }
     return (
-        <>
+        <header>
             <nav id="desktop-nav">
                 <div className="logo">
                     <Link to="/">
@@ -78,7 +78,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </nav>
-        </>
+        </header>
     )
 }
 

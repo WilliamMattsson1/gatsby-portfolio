@@ -12,13 +12,6 @@ body {
     overflow-x: hidden;
 }
 
-html {
-    /* Smooth when clicking in the nav */
-    scroll-behavior: smooth;
-}
-
-/* 2. Desktop Nav */
-
 nav, /* Put the logo and links horizontally */
 .nav-links {
     display: flex;
@@ -30,12 +23,12 @@ nav, /* Put the logo and links horizontally */
     justify-content: space-around;
     align-items: center;
     height: 8vh;
-    background-color: #f6f6f6; /* Or just white / no bakcground-color */
+    background-color: #f6f6f6;
     /* Make nav sticky */
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1; /* Solve the bug #1 with nav */
+    z-index: 1;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
