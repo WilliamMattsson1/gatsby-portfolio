@@ -45,6 +45,15 @@ const Navbar = () => {
                     <div
                         className={`hamburger-icon ${menuOpen ? 'open' : ''}`}
                         onClick={toggleMenu}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' || e.key === ' ') {
+                                toggleMenu()
+                            }
+                        }}
+                        role="button"
+                        tabIndex={0}
+                        aria-expanded={menuOpen}
+                        aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                     >
                         <span></span>
                         <span></span>
@@ -52,22 +61,17 @@ const Navbar = () => {
                     </div>
                     <ul className={`menu-links ${menuOpen ? 'open' : ''}`}>
                         <li>
-                            <Link to="/#about" onClick={toggleMenu}>
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/#skills" onClick={toggleMenu}>
-                                Skills
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/#projects" onClick={toggleMenu}>
+                            <Link to="/projects" onClick={toggleMenu}>
                                 Projects
                             </Link>
                         </li>
                         <li>
-                            <Link to="/#contact" onClick={toggleMenu}>
+                            <Link to="/about" onClick={toggleMenu}>
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" onClick={toggleMenu}>
                                 Contact
                             </Link>
                         </li>
