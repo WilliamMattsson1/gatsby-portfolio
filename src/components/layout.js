@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Navbar from './Navbar'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
     return (
@@ -10,9 +11,7 @@ const Layout = ({ children }) => {
 
             <main>{children}</main>
 
-            <footer>
-                <p>&copy; William Mattsson {new Date().getFullYear()}</p>
-            </footer>
+            <Footer />
         </>
     )
 }

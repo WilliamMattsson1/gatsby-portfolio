@@ -1,0 +1,47 @@
+.footer-links {
+    /* Put the links next to each other */
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+/* Footer */
+
+.footer-container {
+    /* Set the height and center copyrgiht text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer-links {
+    margin-bottom: 1.2rem;
+}
+
+footer p {
+    /* Make it bolder */
+    font-weight: 500;
+    background-color: #f6f6f6;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .footer-links > li > a {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-links {
+        /* Smaller gap between links */
+        gap: 1rem;
+        font-weight: 600;
+        margin-top: 2rem;
+    }
+
+    footer p {
+        /* Make it fit in one line */
+        font-size: 0.8rem;
+    }
+}

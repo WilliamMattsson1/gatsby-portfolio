@@ -24,7 +24,8 @@ nav, /* Put the logo and links horizontally */
     display: flex;
 }
 
-nav {
+#desktop-nav,
+#hamburger-nav {
     /* Fix size, center and adds space around links */
     justify-content: space-around;
     align-items: center;
@@ -163,5 +164,13 @@ nav .logo a:hover {
     #hamburger-nav {
         /* Activate the hamburger nav and make it sticky */
         display: flex;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Navbar */
+    .logo {
+        /* Make logo smaller */
+        font-size: 1.4rem;
     }
 }
