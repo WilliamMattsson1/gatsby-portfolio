@@ -3,6 +3,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import '../styles/projects.css'
+import Seo from '../components/seo'
 
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
@@ -75,5 +76,7 @@ const ProjectsPage = () => {
         </Layout>
     )
 }
+
+export const Head = () => <Seo title={'Projects'}></Seo>
 
 export default ProjectsPage
