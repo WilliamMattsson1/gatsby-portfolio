@@ -1,0 +1,12 @@
+.section-text-p1 {
+    /* Center and bigger size */
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+.title {
+    /* Bigger text in the middle and center */
+    font-size: 2.4rem;
+    text-align: center;
+}

@@ -2,6 +2,7 @@ import * as React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
 import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
+import '../styles/projects.css'
 
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
@@ -15,8 +16,8 @@ const ProjectsPage = () => {
                     toolsUsed
                     image {
                         gatsbyImageData(
-                            width: 300
-                            height: 300
+                            width: 500
+                            height: 500
                             placeholder: BLURRED
                         )
                         description
@@ -37,16 +38,21 @@ const ProjectsPage = () => {
 
     return (
         <Layout>
-            <h1>Projects</h1>
+            <p class="section-text-p1">
+                See <span class="colored-span">All</span>
+            </p>
+            <h2 class="title">My projects</h2>
+
             <ul>
                 {portfolioItems.map((item) => (
                     <li key={item.slug}>
-                        <h2>{item.title}</h2>
                         <GatsbyImage
-                            image={item.image.gatsbyImageData}
+                            image={item.thumbnail.gatsbyImageData}
                             alt={item.image.description || item.title}
                         />
+                        <h2>{item.title}</h2>
                         <p>{item.toolsUsed.join(' | ')}</p>
+                        <button>View Project</button>
                         <Link
                             to={item.githubLink}
                             aria-label={`View ${item.title} on GitHub`}
@@ -60,7 +66,7 @@ const ProjectsPage = () => {
                             View Project
                         </Link>
                         <GatsbyImage
-                            image={item.thumbnail.gatsbyImageData}
+                            image={item.image.gatsbyImageData}
                             alt={item.image.description || item.title}
                         />
                     </li>

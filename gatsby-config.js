@@ -9,8 +9,10 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: `Gatsby Portfolio`,
-        siteUrl: `https://www.yourdomain.tld`
+        title: `Williams Portfolio`,
+        description: `This is my portfolio`,
+        author: `William Mattsson`,
+        siteUrl: `https://williammattsson.se`
     },
     plugins: [
         {
