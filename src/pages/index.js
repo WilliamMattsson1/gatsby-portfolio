@@ -1,13 +1,14 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
+import Layout from '../components/layout'
 
 const IndexPage = () => {
     return (
-        <>
-            <h1>Portfolio sidan</h1>
-            <Link to="/projects">Projects</Link>
-        </>
+        <Layout>
+            <h1>Index.js sidan</h1>
+        </Layout>
     )
 }
+
+export const Head = () => <title>Portfolio</title>
 
 export default IndexPage
