@@ -1,12 +1,11 @@
-import { Link } from 'gatsby'
 import * as React from 'react'
+import Navbar from './Navbar'
 
 const Layout = ({ children }) => {
     return (
         <>
             <header>
-                <h1>Portfolio sidan</h1>
-                <Link to="/projects">Projects</Link>
+                <Navbar />
             </header>
 
             <main>{children}</main>
