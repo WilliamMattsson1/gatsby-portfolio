@@ -20,6 +20,7 @@ const ProjectsPage = () => {
                             width: 500
                             height: 500
                             placeholder: BLURRED
+                            layout: CONSTRAINED
                         )
                         description
                     }

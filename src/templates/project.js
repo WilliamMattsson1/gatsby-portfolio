@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
+import { Link } from 'gatsby'
 
 const Project = ({ data }) => {
     const { title, githubLink, projectLink, toolsUsed, image, description } =
@@ -16,12 +17,13 @@ const Project = ({ data }) => {
             />
             <p>{description.description}</p>
             <p>{toolsUsed.join(' | ')}</p>
-            <a href={githubLink}>Github</a>
-            <a href={projectLink}>Project</a>
+            <Link to={githubLink}>Github</Link>
+            <Link to={projectLink}>Project</Link>
         </Layout>
     )
 }
 
+/* Page query */
 export const query = graphql`
     query ($slug: String!) {
         contentfulPortfolioItem(slug: { eq: $slug }) {
@@ -33,7 +35,12 @@ export const query = graphql`
                 description
             }
             image {
-                gatsbyImageData(width: 500, height: 500, placeholder: BLURRED)
+                gatsbyImageData(
+                    width: 500
+                    height: 500
+                    placeholder: BLURRED
+                    layout: CONSTRAINED
+                )
                 description
             }
         }
