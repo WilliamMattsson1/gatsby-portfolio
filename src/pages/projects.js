@@ -53,7 +53,9 @@ const ProjectsPage = () => {
                         />
                         <h2>{item.title}</h2>
                         <p>{item.toolsUsed.join(' | ')}</p>
-                        <button>View Project</button>
+                        <button>
+                            <Link to={item.slug}>See more</Link>
+                        </button>
                         <Link
                             to={item.githubLink}
                             aria-label={`View ${item.title} on GitHub`}
