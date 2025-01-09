@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import Seo from '../components/seo'
-import { Link } from 'gatsby'
 
 const Project = ({ data }) => {
     const { title, githubLink, projectLink, toolsUsed, image, description } =
@@ -17,8 +16,8 @@ const Project = ({ data }) => {
             />
             <p>{description.description}</p>
             <p>{toolsUsed.join(' | ')}</p>
-            <Link to={githubLink}>Github</Link>
-            <Link to={projectLink}>Project</Link>
+            <a href={githubLink}>Github</a>
+            <a href={projectLink}>Project</a>
         </Layout>
     )
 }

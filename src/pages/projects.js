@@ -40,10 +40,10 @@ const ProjectsPage = () => {
 
     return (
         <Layout>
-            <p class="section-text-p1">
-                See <span class="colored-span">All</span>
+            <p className="section-text-p1">
+                See <span className="colored-span">All</span>
             </p>
-            <h2 class="title">My projects</h2>
+            <h2 className="title">My projects</h2>
 
             <ul>
                 {portfolioItems.map((item) => (
@@ -57,18 +57,18 @@ const ProjectsPage = () => {
                         <button>
                             <Link to={item.slug}>See more</Link>
                         </button>
-                        <Link
-                            to={item.githubLink}
+                        <a
+                            href={item.githubLink}
                             aria-label={`View ${item.title} on GitHub`}
                         >
                             Github
-                        </Link>
-                        <Link
-                            to={item.projectLink}
+                        </a>
+                        <a
+                            href={item.projectLink}
                             aria-label={`View ${item.title} project details`}
                         >
                             View Project
-                        </Link>
+                        </a>
                         <GatsbyImage
                             image={item.image.gatsbyImageData}
                             alt={item.image.description || item.title}
