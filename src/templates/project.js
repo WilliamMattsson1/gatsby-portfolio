@@ -34,12 +34,7 @@ export const query = graphql`
                 description
             }
             image {
-                gatsbyImageData(
-                    width: 1200
-                    height: 1200
-                    placeholder: BLURRED
-                    layout: CONSTRAINED
-                )
+                gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
                 description
             }
         }
