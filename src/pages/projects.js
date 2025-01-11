@@ -11,23 +11,12 @@ const ProjectsPage = () => {
             allContentfulPortfolioItem {
                 nodes {
                     title
-                    githubLink
-                    projectLink
                     slug
                     toolsUsed
-                    image {
-                        gatsbyImageData(
-                            width: 500
-                            height: 500
-                            placeholder: BLURRED
-                            layout: CONSTRAINED
-                        )
-                        description
-                    }
                     thumbnail {
                         gatsbyImageData(
-                            width: 150
-                            height: 150
+                            width: 300
+                            height: 300
                             placeholder: BLURRED
                         )
                     }
@@ -50,29 +39,13 @@ const ProjectsPage = () => {
                     <li key={item.slug}>
                         <GatsbyImage
                             image={item.thumbnail.gatsbyImageData}
-                            alt={item.image.description || item.title}
+                            alt={item.thumbnail.description || item.title}
                         />
                         <h2>{item.title}</h2>
                         <p>{item.toolsUsed.join(' | ')}</p>
                         <button>
                             <Link to={item.slug}>See more</Link>
                         </button>
-                        <a
-                            href={item.githubLink}
-                            aria-label={`View ${item.title} on GitHub`}
-                        >
-                            Github
-                        </a>
-                        <a
-                            href={item.projectLink}
-                            aria-label={`View ${item.title} project details`}
-                        >
-                            View Project
-                        </a>
-                        <GatsbyImage
-                            image={item.image.gatsbyImageData}
-                            alt={item.image.description || item.title}
-                        />
                     </li>
                 ))}
             </ul>
