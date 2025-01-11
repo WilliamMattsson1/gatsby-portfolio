@@ -1,0 +1,41 @@
+.not-found-container {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    max-width: 600px;
+    margin: 5rem auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtil skugga */
+}
+
+.not-found-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    color: #333;
+}
+
+.not-found-description {
+    font-size: 1.25rem;
+    margin: 0 0 2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.not-found-btn {
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: rgb(50, 50, 50);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 300ms ease-in-out;
+}
+
+.not-found-btn:hover {
+    background-color: black;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
