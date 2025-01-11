@@ -32,20 +32,26 @@ const ProjectsPage = () => {
             <p className="section-text-p1">
                 See <span className="colored-span">All</span>
             </p>
-            <h2 className="title">My projects</h2>
+            <h1 className="title">My projects</h1>
 
-            <ul>
+            <ul className="cards-container">
                 {portfolioItems.map((item) => (
-                    <li key={item.slug}>
+                    <li key={item.slug} className="card">
                         <GatsbyImage
                             image={item.thumbnail.gatsbyImageData}
                             alt={item.thumbnail.description || item.title}
                         />
-                        <h2>{item.title}</h2>
-                        <p>{item.toolsUsed.join(' | ')}</p>
-                        <button>
-                            <Link to={item.slug}>See more</Link>
-                        </button>
+                        <div className="card-content">
+                            <h2 className="card-title">{item.title}</h2>
+                            <p className="card-text">
+                                {item.toolsUsed.join(' | ')}
+                            </p>
+                            <button className="card-btn btn">
+                                <Link to={item.slug} className="btn-text">
+                                    See more
+                                </Link>
+                            </button>
+                        </div>
                     </li>
                 ))}
             </ul>

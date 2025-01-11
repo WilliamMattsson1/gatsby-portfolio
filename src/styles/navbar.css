@@ -39,13 +39,15 @@ nav, /* Put the logo and links horizontally */
     font-size: 1.6rem;
 }
 
-a {
+.nav-links > li > a,
+.logo > a {
     /* Color of links and take away the underline */
     color: black;
     text-decoration: none;
 }
 
-a:hover {
+.nav-links li a:hover,
+.logo > a:hover {
     color: #fca311; /* Make orange while hover and adds underline 1 rem down */
     text-decoration: underline;
     text-decoration-color: #fca311;

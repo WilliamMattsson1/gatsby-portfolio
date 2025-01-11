@@ -10,3 +10,65 @@
     font-size: 2.4rem;
     text-align: center;
 }
+
+.cards-container {
+    /* Put the cards in responsive and row */
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+.card {
+    /* Gives border to the cards, space and size */
+    border-radius: 1rem;
+    width: 16rem;
+    margin: 0.6rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+    /* Fix the img in the card */
+    width: 100%;
+    min-height: 50%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card-content {
+    /* Space around content */
+    padding: 1rem;
+}
+
+.card-title {
+    /* Center card title */
+    text-align: center;
+}
+
+.card-text {
+    /* Margin under the card text and center */
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.btn {
+    /* Style button size */
+    font-weight: 600;
+    transition: all 300ms ease-in-out;
+    padding: 1rem;
+    width: 9rem;
+    border-radius: 1rem;
+    border: 2px solid white;
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+
+.btn:hover {
+    /* Make it darker and add small orange border */
+    cursor: pointer;
+    background-color: black;
+}
+
+.btn-text {
+    color: white;
+    text-decoration: none;
+}
