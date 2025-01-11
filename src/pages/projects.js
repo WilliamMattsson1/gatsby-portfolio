@@ -46,11 +46,13 @@ const ProjectsPage = () => {
                             <p className="card-text">
                                 {item.toolsUsed.join(' | ')}
                             </p>
-                            <button className="card-btn btn">
-                                <Link to={item.slug} className="btn-text">
-                                    See more
-                                </Link>
-                            </button>
+                            <div className="btn-container">
+                                <button className="card-btn btn">
+                                    <Link to={item.slug} className="btn-text">
+                                        See more
+                                    </Link>
+                                </button>
+                            </div>
                         </div>
                     </li>
                 ))}

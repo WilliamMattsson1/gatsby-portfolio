@@ -50,6 +50,10 @@
     text-align: center;
 }
 
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
 .btn {
     /* Style button size */
     font-weight: 600;
