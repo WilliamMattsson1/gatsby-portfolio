@@ -10,6 +10,7 @@
 .footer-links {
     /* Put the links next to each other */
     justify-content: center;
+    margin-top: 1.4rem;
 }
 
 .footer-container {
