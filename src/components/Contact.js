@@ -22,7 +22,7 @@ const About = () => {
     return (
         <section>
             <h1>{title}</h1>
-            <p>{content}</p>
+            <p>{content.content}</p>
             <ul>
                 <li>
                     <a href={`mailto:${email}`}>
