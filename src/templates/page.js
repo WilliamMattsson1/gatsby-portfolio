@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Home from '../components/Home'
 import { graphql } from 'gatsby'
 import About from '../components/About'
+import Seo from '../components/seo'
 
 const PageTemplate = ({ data }) => {
     const { title } = data.contentfulPage
@@ -25,6 +26,10 @@ const PageTemplate = ({ data }) => {
 
     return <Layout>{renderPageContent()}</Layout>
 }
+
+export const Head = ({ data }) => (
+    <Seo title={`${data.contentfulPage.title}`}></Seo>
+)
 
 export default PageTemplate
 
