@@ -22,6 +22,9 @@ const ProjectsPage = () => {
                     }
                 }
             }
+            contentfulPage(slug: { eq: "projects" }) {
+                title
+            }
         }
     `)
 
@@ -32,7 +35,7 @@ const ProjectsPage = () => {
             <p className="section-text-p1">
                 See <span className="colored-span">All</span>
             </p>
-            <h1 className="title">My projects</h1>
+            <h1 className="title">{data.contentfulPage.title}</h1>
 
             <ul className="cards-container">
                 {portfolioItems.map((item) => (
