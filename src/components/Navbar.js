@@ -36,7 +36,13 @@ const Navbar = () => {
                 <ul className="nav-links">
                     {menuItems.map((item) => (
                         <li key={item.title}>
-                            <Link to={`/${item.linkTo.slug}`}>
+                            <Link
+                                to={
+                                    item.linkTo.slug === '/'
+                                        ? '/'
+                                        : `/${item.linkTo.slug}`
+                                }
+                            >
                                 {item.title}
                             </Link>
                         </li>
@@ -71,21 +77,19 @@ const Navbar = () => {
                         <span></span>
                     </div>
                     <ul className={`menu-links ${menuOpen ? 'open' : ''}`}>
-                        <li>
-                            <Link to="/projects" onClick={toggleMenu}>
-                                Projects
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/about" onClick={toggleMenu}>
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/contact" onClick={toggleMenu}>
-                                Contact
-                            </Link>
-                        </li>
+                        {menuItems.map((item) => (
+                            <li key={item.title}>
+                                <Link
+                                    to={
+                                        item.linkTo.slug === '/'
+                                            ? '/'
+                                            : `/${item.linkTo.slug}`
+                                    }
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </nav>
