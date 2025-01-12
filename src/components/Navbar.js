@@ -1,9 +1,24 @@
 import { useState } from 'react'
 import React from 'react'
 import '../styles/navbar.css'
-import { Link } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 
 const Navbar = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulMenuItem {
+                nodes {
+                    title
+                    linkTo {
+                        slug
+                    }
+                }
+            }
+        }
+    `)
+
+    const menuItems = data.allContentfulMenuItem.nodes
+
     const [menuOpen, setMenuOpen] = useState(false)
 
     const toggleMenu = () => {
@@ -18,19 +33,15 @@ const Navbar = () => {
                     </Link>
                 </div>
 
-                <div>
-                    <ul className="nav-links">
-                        <li>
-                            <Link to="/projects">Projects</Link>
+                <ul className="nav-links">
+                    {menuItems.map((item) => (
+                        <li key={item.title}>
+                            <Link to={`/${item.linkTo.slug}`}>
+                                {item.title}
+                            </Link>
                         </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/contact">Contact</Link>
-                        </li>
-                    </ul>
-                </div>
+                    ))}
+                </ul>
             </nav>
             <nav id="hamburger-nav">
                 {/* Logo */}
