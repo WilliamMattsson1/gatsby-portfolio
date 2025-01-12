@@ -5,7 +5,7 @@ import { graphql, useStaticQuery, Link } from 'gatsby'
 const Footer = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulMenuItem {
+            allContentfulMenuItem(sort: { order: ASC }) {
                 nodes {
                     title
                     linkTo {

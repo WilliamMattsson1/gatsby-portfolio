@@ -6,7 +6,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby'
 const Navbar = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulMenuItem {
+            allContentfulMenuItem(sort: { order: ASC }) {
                 nodes {
                     title
                     linkTo {
