@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import Home from '../components/Home'
 import { graphql } from 'gatsby'
 import About from '../components/About'
+import Contact from '../components/Contact'
 import Seo from '../components/seo'
 
 const PageTemplate = ({ data }) => {
@@ -15,6 +16,8 @@ const PageTemplate = ({ data }) => {
                 return <Home />
             case 'About me':
                 return <About />
+            case 'Contact':
+                return <Contact />
             default:
                 return (
                     <div>
