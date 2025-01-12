@@ -1,32 +1,41 @@
 import React from 'react'
 import '../styles/footer.css'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 const Footer = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            allContentfulMenuItem {
+                nodes {
+                    title
+                    linkTo {
+                        slug
+                    }
+                }
+            }
+        }
+    `)
+
+    const menuItems = data.allContentfulMenuItem.nodes
+
     return (
         <>
             <footer className="footer-container">
                 <nav aria-label="Footer navigation">
                     <ul className="nav-links footer-links">
-                        <li>
-                            <a href="/" aria-label="Home page">
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/projects" aria-label="View projects">
-                                Projects
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/about" aria-label="Learn more about me">
-                                About
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/contact" aria-label="Contact me">
-                                Contact
-                            </a>
-                        </li>
+                        {menuItems.map((item) => (
+                            <li key={item.title}>
+                                <Link
+                                    to={
+                                        item.linkTo.slug === '/'
+                                            ? '/'
+                                            : `/${item.linkTo.slug}`
+                                    }
+                                >
+                                    {item.title}
+                                </Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
                 <span className="underline"></span>
