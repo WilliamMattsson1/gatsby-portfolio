@@ -1,6 +1,8 @@
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions
-    const result = await graphql(`
+
+    // Skapa sidor för Portfolio Items
+    const portfolioResult = await graphql(`
         query {
             allContentfulPortfolioItem {
                 nodes {
@@ -9,7 +11,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-    result.data.allContentfulPortfolioItem.nodes.forEach((node) => {
+
+    portfolioResult.data.allContentfulPortfolioItem.nodes.forEach((node) => {
         createPage({
             path: `/projects/${node.slug}`,
             component: require.resolve('./src/templates/project.js'),
@@ -18,11 +21,9 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         })
     })
-}
 
-exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions
-    const result = await graphql(`
+    // Skapa sidor för Contentful Pages
+    const pagesResult = await graphql(`
         query {
             allContentfulPage {
                 nodes {
@@ -31,7 +32,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `)
-    const pages = result.data.allContentfulPage.nodes
+
+    const pages = pagesResult.data.allContentfulPage.nodes
     pages.forEach((page) => {
         createPage({
             path: `/${page.slug}`,
