@@ -49,7 +49,7 @@ const ProjectsPage = () => {
                             <div className="btn-container">
                                 <button className="card-btn btn">
                                     <Link to={item.slug} className="btn-text">
-                                        See more
+                                        See project
                                     </Link>
                                 </button>
                             </div>
