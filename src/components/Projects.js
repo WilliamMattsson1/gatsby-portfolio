@@ -29,13 +29,38 @@ const ProjectsPage = () => {
 
     const portfolioItems = data.allContentfulPortfolioItem.nodes
 
+    // State for selected tool filter
+    const [selectedTool, setSelectedTool] = React.useState('All')
+
+    // Function to filter projects based on selected tool
+    const filteredProjects = portfolioItems.filter((item) => {
+        return selectedTool === 'All' || item.toolsUsed.includes(selectedTool)
+    })
+
+    const tools = ['All', 'React', 'Vue.js', 'Javascript']
+
     return (
         <>
             <h1 className="title">{data.contentfulPage.title}</h1>
 
+            <div className="filter-buttons">
+                {tools.map((tool) => (
+                    <button
+                        key={tool}
+                        className={`filter-btn ${
+                            selectedTool === tool ? 'active' : ''
+                        }`}
+                        onClick={() => setSelectedTool(tool)}
+                    >
+                        {tool}
+                    </button>
+                ))}
+            </div>
+
+            {/* Display filtered projects */}
             <section>
                 <ul className="cards-container">
-                    {portfolioItems.map((item) => (
+                    {filteredProjects.map((item) => (
                         <li key={item.slug} className="card">
                             <GatsbyImage
                                 image={item.thumbnail.gatsbyImageData}
