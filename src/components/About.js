@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import '../styles/about.css'
 
 const About = () => {
     const data = useStaticQuery(graphql`
@@ -11,7 +12,11 @@ const About = () => {
                     content
                 }
                 image {
-                    gatsbyImageData(width: 700, placeholder: BLURRED)
+                    gatsbyImageData(
+                        width: 400
+                        height: 400
+                        placeholder: BLURRED
+                    )
                 }
             }
         }
@@ -21,18 +26,21 @@ const About = () => {
 
     const gatsbyImage = getImage(image)
     return (
-        <section className="About-section">
-            <h1 className="About-title">{title}</h1>
-            <div className="About-content">
-                <p>{content.content}</p>
+        <section className="about-section">
+            <h1 className="title">{title}</h1>
+            <div className="about-content">
+                {gatsbyImage && (
+                    <div className="about-image">
+                        <GatsbyImage
+                            image={gatsbyImage}
+                            alt={image.description || 'About me Image'}
+                        />
+                    </div>
+                )}
+                <div className="about-text">
+                    <div className="about-paragraph">{content.content}</div>
+                </div>
             </div>
-            {gatsbyImage && (
-                <GatsbyImage
-                    image={gatsbyImage}
-                    alt={image.description || 'About me Image'}
-                    className="About-image"
-                />
-            )}
         </section>
     )
 }
