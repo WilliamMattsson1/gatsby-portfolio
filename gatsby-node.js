@@ -35,6 +35,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const pages = pagesResult.data.allContentfulPage.nodes
     pages.forEach((page) => {
+        if (page.slug === '/') {
+            return
+        }
         createPage({
             path: `/${page.slug}`,
             component: require.resolve('./src/templates/page.js'),
