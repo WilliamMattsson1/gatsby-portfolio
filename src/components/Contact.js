@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa'
+import '../styles/contact.css'
 
 const About = () => {
     const data = useStaticQuery(graphql`
@@ -20,34 +21,54 @@ const About = () => {
     const { title, content, email, linkedin, github } = data.contentfulPage
 
     return (
-        <section>
-            <h1>{title}</h1>
-            <p>{content.content}</p>
-            <ul>
-                <li>
-                    <a href={`mailto:${email}`}>
-                        <FaEnvelope style={{ marginRight: '0.5rem' }} />
-                        Email
-                    </a>
-                </li>
-                <li>
-                    <a
-                        href={linkedin}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <FaLinkedin style={{ marginRight: '0.5rem' }} />
-                        LinkedIn
-                    </a>
-                </li>
-                <li>
-                    <a href={github} target="_blank" rel="noopener noreferrer">
-                        <FaGithub style={{ marginRight: '0.5rem' }} />
-                        GitHub
-                    </a>
-                </li>
-            </ul>
-        </section>
+        <>
+            <h1 className="title">{title}</h1>
+            <section id="contact">
+                <p className="about-details-p1 contact-text">
+                    {content.content}
+                </p>
+
+                <div className="contacts-container">
+                    <div className="contact-info-container">
+                        <FaEnvelope className="icon contact-icon email-icon" />
+                        <p>
+                            <a
+                                className="contact-link"
+                                href={`mailto:${email}`}
+                            >
+                                Email
+                            </a>
+                        </p>
+                    </div>
+                    <div className="contact-info-container">
+                        <FaLinkedin className="icon contact-icon" />
+                        <p>
+                            <a
+                                className="contact-link"
+                                href={linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                            </a>
+                        </p>
+                    </div>
+                    <div className="contact-info-container">
+                        <FaGithub className="icon contact-icon" />
+                        <p>
+                            <a
+                                className="contact-link"
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </>
     )
 }
 

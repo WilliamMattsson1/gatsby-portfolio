@@ -26,22 +26,25 @@ const About = () => {
 
     const gatsbyImage = getImage(image)
     return (
-        <section className="about-section">
+        <>
             <h1 className="title">{title}</h1>
-            <div className="about-content">
-                {gatsbyImage && (
-                    <div className="about-image">
-                        <GatsbyImage
-                            image={gatsbyImage}
-                            alt={image.description || 'About me Image'}
-                        />
+
+            <section className="about-section">
+                <div className="about-content">
+                    {gatsbyImage && (
+                        <div className="about-image">
+                            <GatsbyImage
+                                image={gatsbyImage}
+                                alt={image.description || 'About me Image'}
+                            />
+                        </div>
+                    )}
+                    <div className="about-text">
+                        <div className="about-paragraph">{content.content}</div>
                     </div>
-                )}
-                <div className="about-text">
-                    <div className="about-paragraph">{content.content}</div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </>
     )
 }
 

@@ -1,0 +1,66 @@
+#contact {
+    /* Adjust height to give more space to footer */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.contact-text {
+    text-align: center;
+    width: 70%;
+    margin: 1rem auto;
+    padding: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    background-color: #f6f6f6;
+    border-radius: 1rem;
+}
+
+.contacts-container {
+    /* Put both icons next to each with a border */
+    display: flex;
+    border-radius: 1rem;
+    margin: 2rem auto;
+    padding: 0.5rem;
+    background-color: #f6f6f6;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-container {
+    /* Position each icon and text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    margin: 1rem;
+}
+
+.contact-icon {
+    /* Adjust size of icons */
+    font-size: 2.4rem;
+}
+
+.contact-text {
+    /* Adjust size of text */
+    font-size: 1.2rem;
+}
+
+.contact-link {
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width: 900px) {
+    .contact-text {
+        /* Adjust width of text */
+        width: 90%;
+    }
+
+    .contacts-container {
+        flex-direction: column;
+        align-items: start;
+    }
+}
