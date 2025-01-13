@@ -12,7 +12,7 @@ module.exports = {
         title: `Williams Portfolio`,
         description: `This is my portfolio`,
         author: `William Mattsson`,
-        siteUrl: `https://williammattsson-gatsby.netlify.app`
+        siteUrl: `https://williammattsson-gatsby.netlify.app/`
     },
     plugins: [
         {
