@@ -1,6 +1,7 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import '../styles/home.css'
 
 const Home = () => {
     const data = useStaticQuery(graphql`
@@ -23,21 +24,29 @@ const Home = () => {
     const gatsbyImage = getImage(image)
 
     return (
-        <div className="home-page">
-            <h1 className="home-title">{title}</h1>
-            {gatsbyImage && (
-                <GatsbyImage
-                    image={gatsbyImage}
-                    alt={image.description || 'Portfolio Image'}
-                    className="home-image"
-                />
-            )}
-            {
-                <div>
-                    <p>{content.content}</p>
+        <>
+            <h1 className="title home-title">{title}</h1>
+            <section className="home-page">
+                <div className="section-img-container">
+                    {gatsbyImage && (
+                        <GatsbyImage
+                            image={gatsbyImage}
+                            alt={image.description || 'Portfolio Image'}
+                            className="home-image"
+                        />
+                    )}
                 </div>
-            }
-        </div>
+
+                <div className="section-text">
+                    <h2>{content.content}</h2>
+                    <button className="btn">
+                        <Link to="/contact" className="btn-text">
+                            Contact me
+                        </Link>
+                    </button>
+                </div>
+            </section>
+        </>
     )
 }
 

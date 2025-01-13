@@ -1,0 +1,69 @@
+.home-title {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+section {
+    min-height: 90vh; /* Min-height to make it more responsive */
+}
+
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    min-height: 80vh;
+    margin: auto 0;
+}
+
+.section-img-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.home-image {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.section-text {
+    align-self: center;
+    text-align: center;
+}
+
+.section-text h2 {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1025px) {
+    section {
+        /*  Margin on the sides */
+        margin: 0 10%;
+    }
+
+    .section-img-container {
+        /* Center the welcome img, make it smaller and add margin bottom */
+        width: 275px;
+        height: 275px;
+        margin: 0 auto 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .home-page {
+        /* Change the direction of the flexbox */
+        flex-direction: column;
+    }
+
+    .section-img-container {
+        /* Center the welcome pic and makes it smaller */
+        justify-content: center;
+    }
+
+    .title {
+        /* Smaller font-size */
+        font-size: 1.6rem;
+    }
+}
