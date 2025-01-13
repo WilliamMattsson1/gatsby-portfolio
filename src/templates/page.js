@@ -43,6 +43,7 @@ export const query = graphql`
     query ($slug: String!) {
         contentfulPage(slug: { eq: $slug }) {
             template
+            title
         }
     }
 `
