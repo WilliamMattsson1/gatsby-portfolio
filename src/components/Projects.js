@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { graphql, useStaticQuery, Link } from 'gatsby'
-import Layout from '../components/layout'
 import { GatsbyImage } from 'gatsby-plugin-image'
 import '../styles/projects.css'
 import Seo from '../components/seo'
@@ -31,7 +30,7 @@ const ProjectsPage = () => {
     const portfolioItems = data.allContentfulPortfolioItem.nodes
 
     return (
-        <Layout>
+        <section>
             <p className="section-text-p1">
                 See <span className="colored-span">All</span>
             </p>
@@ -60,7 +59,7 @@ const ProjectsPage = () => {
                     </li>
                 ))}
             </ul>
-        </Layout>
+        </section>
     )
 }
 

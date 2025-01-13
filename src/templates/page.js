@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import Home from '../components/Home'
+import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
 import About from '../components/About'
 import Contact from '../components/Contact'
@@ -15,6 +16,8 @@ const PageTemplate = ({ data }) => {
         switch (template) {
             case 'Home':
                 return <Home />
+            case 'Projects':
+                return <Projects />
             case 'About':
                 return <About />
             case 'Contact':
