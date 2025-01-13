@@ -12,7 +12,7 @@ module.exports = {
         title: `Williams Portfolio`,
         description: `This is my portfolio`,
         author: `William Mattsson`,
-        siteUrl: `https://williammattsson.se`
+        siteUrl: `https://williammattsson-gatsby.netlify.app`
     },
     plugins: [
         {
@@ -25,6 +25,7 @@ module.exports = {
         'gatsby-plugin-image',
         'gatsby-plugin-sharp',
         'gatsby-transformer-sharp',
-        'gatsby-transformer-remark'
+        'gatsby-transformer-remark',
+        'gatsby-plugin-sitemap'
     ]
 }
