@@ -7,14 +7,15 @@ import Contact from '../components/Contact'
 import Seo from '../components/seo'
 
 const PageTemplate = ({ data }) => {
-    const { title } = data.contentfulPage
+    const { template } = data.contentfulPage
+    console.log(template)
 
     // Dynamiskt val av komponent baserat på titel
     const renderPageContent = () => {
-        switch (title) {
-            case 'Portfolio':
+        switch (template) {
+            case 'Home':
                 return <Home />
-            case 'About me':
+            case 'About':
                 return <About />
             case 'Contact':
                 return <Contact />
@@ -26,6 +27,8 @@ const PageTemplate = ({ data }) => {
                 )
         }
     }
+
+    console.log(data)
 
     return <Layout>{renderPageContent()}</Layout>
 }
@@ -39,7 +42,7 @@ export default PageTemplate
 export const query = graphql`
     query ($slug: String!) {
         contentfulPage(slug: { eq: $slug }) {
-            title
+            template
         }
     }
 `
