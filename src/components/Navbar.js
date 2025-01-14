@@ -28,9 +28,7 @@ const Navbar = () => {
         <header>
             <nav id="desktop-nav">
                 <div className="logo">
-                    <Link to="/">
-                        <span className="colored-span">William</span> Mattsson
-                    </Link>
+                    <Link to="/">William Mattsson</Link>
                 </div>
 
                 <ul className="nav-links">
@@ -52,9 +50,7 @@ const Navbar = () => {
             <nav id="hamburger-nav">
                 {/* Logo */}
                 <div className="logo">
-                    <Link to="/">
-                        <span className="colored-span">William</span> Mattsson
-                    </Link>
+                    <Link to="/">William Mattsson</Link>
                 </div>
 
                 {/* Hamburger Menu */}
