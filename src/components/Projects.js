@@ -12,7 +12,7 @@ const ProjectsPage = () => {
                     name
                 }
             }
-            allContentfulPortfolioItem {
+            allContentfulPortfolioItem(sort: { order: ASC }) {
                 nodes {
                     title
                     slug
