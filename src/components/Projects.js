@@ -35,19 +35,18 @@ const ProjectsPage = () => {
     const portfolioItems = data.allContentfulPortfolioItem.nodes
 
     // State for selected tool filter
-    const [selectedTool, setSelectedTool] = React.useState('All')
+    const allProjects = data.allContentfulFilterTool.nodes[0].name
+    const [selectedTool, setSelectedTool] = React.useState(allProjects)
 
     // Function to filter projects based on selected tool
     const filteredProjects = portfolioItems.filter((item) => {
-        return selectedTool === 'All' || item.toolsUsed.includes(selectedTool)
+        return (
+            selectedTool === allProjects ||
+            item.toolsUsed.includes(selectedTool)
+        )
     })
 
-    const tools = [
-        'All',
-        ...data.allContentfulFilterTool.nodes.map((tool) => tool.name)
-    ]
-
-    console.log('tools', tools)
+    const tools = data.allContentfulFilterTool.nodes.map((node) => node.name)
 
     return (
         <>
@@ -87,7 +86,7 @@ const ProjectsPage = () => {
                                             to={item.slug}
                                             className="btn-text"
                                         >
-                                            See project
+                                            View project
                                         </Link>
                                     </button>
                                 </div>
