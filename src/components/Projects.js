@@ -7,6 +7,11 @@ import Seo from '../components/seo'
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
         query {
+            allContentfulFilterTool {
+                nodes {
+                    name
+                }
+            }
             allContentfulPortfolioItem {
                 nodes {
                     title
@@ -37,7 +42,17 @@ const ProjectsPage = () => {
         return selectedTool === 'All' || item.toolsUsed.includes(selectedTool)
     })
 
-    const tools = ['All', 'React', 'Vue.js', 'Javascript']
+    /*  const tools = [
+        'All',
+        ...data.allContentfulFilterTool.nodes.map((tool) => tool.name)
+    ] */
+
+    const tools = [
+        'All',
+        ...data.allContentfulFilterTool.nodes.map((tool) => tool.name)
+    ]
+
+    console.log('tools', tools)
 
     return (
         <>
