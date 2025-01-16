@@ -7,7 +7,7 @@ import Seo from '../components/seo'
 const ProjectsPage = () => {
     const data = useStaticQuery(graphql`
         query {
-            allContentfulFilterTool {
+            allContentfulFilterTool(sort: { order: ASC }) {
                 nodes {
                     name
                 }
@@ -41,11 +41,6 @@ const ProjectsPage = () => {
     const filteredProjects = portfolioItems.filter((item) => {
         return selectedTool === 'All' || item.toolsUsed.includes(selectedTool)
     })
-
-    /*  const tools = [
-        'All',
-        ...data.allContentfulFilterTool.nodes.map((tool) => tool.name)
-    ] */
 
     const tools = [
         'All',
