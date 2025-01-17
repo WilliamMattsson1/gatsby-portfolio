@@ -81,14 +81,11 @@ const ProjectsPage = () => {
                                     {item.toolsUsed.join(' | ')}
                                 </p>
                                 <div className="btn-container">
-                                    <button className="card-btn btn">
-                                        <Link
-                                            to={item.slug}
-                                            className="btn-text"
-                                        >
+                                    <Link to={item.slug} className="btn-text">
+                                        <button className="card-btn btn">
                                             View project
-                                        </Link>
-                                    </button>
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </li>
