@@ -39,11 +39,9 @@ const Home = () => {
 
                 <div className="section-text">
                     <h2>{content.content}</h2>
-                    <button className="btn">
-                        <Link to="/contact" className="btn-text">
-                            Contact me
-                        </Link>
-                    </button>
+                    <Link to="/contact">
+                        <button className="btn">Contact me</button>
+                    </Link>
                 </div>
             </section>
         </>
